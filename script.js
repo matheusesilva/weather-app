@@ -20,7 +20,7 @@ async function getPhoto(weather, local) {
 }
 
 async function getData(local) {
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${local}&days=5&aqi=no&alerts=no`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${weatherKey}&q=${local}&days=5&aqi=no&alerts=no`;
   const response = await fetch(url);
   const result = await response.json();
   getPhoto(result.current.condition.text, local);
